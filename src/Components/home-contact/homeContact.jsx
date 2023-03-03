@@ -18,8 +18,8 @@ export const HomeContact = () => {
               <span>
                 <Image src={phone} alt="phone_icon" />
               </span>
-              <Link className="hcontact__link" href="tel: +998951698555">
-                +998 95 169 85 55{" "}
+              <Link className="hcontact__link" href="tel: +998787775757">
+                +998 78 777 57 57{" "}
               </Link>
             </li>
             <li className="hcontact__item" data-aos="fade-up-right">
