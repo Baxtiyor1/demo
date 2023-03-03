@@ -1,0 +1,110 @@
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    background-image: url("../../images/body_bg.png"), url("../../images/wheat-modal.png"), url("../../images/decor_1.png");
+    background-repeat: no-repeat;
+    background-size: cover, 500px, 350px;
+    background-position: center, bottom -120px right 100px, top left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    visibility: hidden;
+    transition: 0.3s;
+    opacity: 0.5;
+    &--active{
+        opacity: 1;
+        visibility: visible;
+    }
+    &__list{
+        height: auto;
+        display: grid;
+        gap: 0 120px;
+        margin-top: 50px;
+        grid-template-areas: 
+        "home  product"
+        "precipe  contact"
+        " about about";
+    }
+    &__item{
+        padding: 20px 30px;
+        &:first-child a{
+            grid-area: home;
+        }
+        &:nth-child(2){
+            grid-area: product;
+            &:hover {
+                background-image: url("../../images/modal_bg_icon.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+            }
+        }
+        &:nth-child(3){
+            grid-area: precipe;
+        }
+        &:nth-child(4){
+            grid-area: about;
+        }
+        &:nth-child(5){
+            grid-area: contact;
+        }
+    }
+    &__link{
+        font-weight: 800;
+        font-size: 62px;
+        line-height: 92px;
+        color: #D42117;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .modal{
+        background-size: cover, 400px, 300px;
+        background-position: center, bottom -120px right -20px, top left;
+        &__list{
+            gap: 15px;
+            grid-template-areas: 
+            "home  product"
+            "precipe  contact"
+            " about about";
+        }
+        &__link{
+            font-size: 40px;
+            line-height: normal;
+        }
+    }
+}
+@media screen and (max-width: 650px) {
+    .modal{
+        background-size: cover, 350px, 250px;
+        background-position: center, bottom -120px right -40px, top left;
+        &__list{
+            gap: 15px;
+            grid-template-areas: 
+            "home"
+            "product"
+            "precipe"
+            "about"
+            "contact";
+        }
+        &__item{
+            padding: 0px;
+        }
+        
+    }
+}
+@media screen and (max-width: 425px) {
+    .modal{
+        background-size: cover, 300px, 200px;
+        background-position: center, bottom -120px right -65px, top left;
+        &__link{
+            font-size: 32px;
+            line-height: normal;
+        }
+    }
+}

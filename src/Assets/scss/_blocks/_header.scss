@@ -1,0 +1,126 @@
+.header{
+    padding-top: 75px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    &__logo{
+        &-link{
+            position: absolute;
+            z-index: 100;
+            left: calc(50% - 118px);
+            right: calc(50% - 118px);
+            top: 50px;
+        }
+    }
+    &__line{
+        display: inline-block;
+        margin-bottom: 8px;
+        width: 67px;
+        height: 8.5px;
+        background-color: #FFF;
+        transform: skew(-45deg);
+        transition: 0.4s;
+    }
+    &__burger{
+        padding:86px 0 0 33px;
+        background-color: transparent;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        &--box{
+            width: 367px;
+            height: 214px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-image: url("../../images/burger_bg.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 100;
+        }
+        &--active{
+            & .header__line{
+                &:first-child{
+                    transform: translate(7px, 11px) rotate(45deg) skew(-45deg);
+                }
+                &:nth-child(2){
+                    transform: translate(-100%) skew(-45deg);
+                    opacity: 0;
+                }
+                &:nth-child(3){
+                    transform: translate(5px, -21px) rotate(-45deg) skew(-45deg);
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1440px){
+    .header{
+        &__burger{
+            padding: 50px 0 0 33px;
+            &--box{
+                width: 300px;
+                height: 170px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1024px){
+    .header{
+        &__logo{
+            width: 200px;
+        }
+        &__burger{
+            padding: 28px 0 0 24px;
+            &--box{
+                width: 230px;
+                height: 120px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 768px){
+    .header{
+        &__logo{
+            width: 150px;
+            &-link{
+            top: 25px;
+            }
+        }
+        &__burger{
+            &--box{
+                background-image: none;
+                width: 150px;
+                height: 100px;
+            }
+            &--active{
+            & span {
+            background-color: red;
+            }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 425px){
+    .header{
+        &__logo{
+            width: 120px;
+        }
+        &__line{
+            width: 52px;
+            height: 6.5px;
+        }
+        &__burger{
+            &--box{
+                background-image: none;
+                width: 95px;
+                height: 100px;
+            }
+        }
+    }
+}
